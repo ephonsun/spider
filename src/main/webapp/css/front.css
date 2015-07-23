@@ -1,0 +1,33 @@
+body {
+	/*background-color: #FFFFFF; */
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color:#000000; 	
+}
+	
+.tabledetail {
+	font-family: Arial,Helvetica,sans-serif;
+	FONT-SIZE: 14px; 
+	COLOR:#000000; 
+	TEXT-DECORATION: none;
+   cursor: default;
+   bordercolorlight:#B3B3B3;
+   bordercolordark:#FFFFFF;
+}
+
+.user-img img{ margin:5px 0;width:50px;}
+
+/* add by zhliu*/
+.page{text-align:center;margin:5px 0 5px 0px;font:normal 12px arial;}
+.page a{border:solid 1px #bbbbbb;display:inline-block;text-decoration:none;vertical-align:middle;color:#666666;padding:0px 6px;height:19px;line-height:19px;font-size:11px;margin-right:5px;overflow:hidden;}
+.page a:hover{color:#ffffff;background:#6bbf1b;text-decoration:none;border:1px solid #50a401;}
+.page a.current_page{background:#6bbf1b;border:solid 1px #50a401;color:#ffffff;font-weight:bold;}
+.page a.current_page:hover{background:#6bbf1b;border:solid 1px #50a401;color:#fff;}
+.page a.prev_page,.page a.next_page,.page a.shou,.page a.wei{padding:0px 2px;font-size:12px;overflow:hidden;vertical-align:middle;_line-height:22px;}
+.page a.prev_page{margin-right:20px;_line-height:24px;*line-height:20px;}
+.page a.next_page{margin-left:15px;*line-height:24px;}
+
