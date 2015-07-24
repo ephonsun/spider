@@ -31,7 +31,6 @@
 	
 	<div class="set-area-int">
 		搜索结果：<span class="fred">${text}</span><br />
-		访问url:<span><a href="${searchurl}">${searchurl}</a></span>
 	</div>
 	<div class="">
 		<table width="100%" cellspacing="0" cellpadding="3" border="1"

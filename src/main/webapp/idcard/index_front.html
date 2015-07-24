@@ -6,29 +6,20 @@
 <script type="text/javascript">
 	function subform() {
 		var idcard = document.getElementById('idcard').value;
-		var name = document.getElementById('name').value;
 		//self.location.href="http://www.p2pblack.com/?tj="+ qType + "&kw="+text ;
 		document.form1.submit();
 		//window.open("http://www.p2pblack.com/?tj="+ qType + "&kw="+text,"mainFrame");
 	}
 </script>
 
-<title>p2p blacklist查询</title>
+<title>idcard查询</title>
 </head>
 <body>
-	<form action="/p2pblack/query.do" method="get" name="form1"
+	<form action="/idcard/query.do" method="get" name="form1"
 		target="mainFrame" id="form1">
-		<!-- 查询类型<select id="qType" name="qType">
-			<option value="1" selected>姓名</option>
-			<option value="2">身份证</option>
-		</select> --> &nbsp;&nbsp; 
-		身份证<input id="idcard" name="idcard" type="text" value="" size="20" /> <br />
+		&nbsp;&nbsp; 
+		身份证号<input id="idcard" name="idcard" type="text" value="" size="20" /> <br />
 		 &nbsp;&nbsp; 
-		 姓名<input id="name" name="name" type="text" value="" size="20" /> <br />
-		<!-- 每页记录
-		 &nbsp;&nbsp;
-    <input name="num" type="text" value="20" size="2" />&nbsp;&nbsp;-->
-    <!--  第<input name="page" type="text" value="1" size="2" />页-->
   
 		<input type="button" onclick="subform()" value="提交" /> <input
 			type="reset" name="Reset" value="重置" /> <br />

@@ -1,4 +1,3 @@
-
 package com.hyc.spider;
 
 import java.util.Map;
@@ -12,22 +11,26 @@ import com.hyc.spider.exception.BusiException;
 
 
 
-public class BaseParser  {
+public class BaseParser {
   private static final Logger _log = LoggerFactory.getLogger(BaseParser.class);
 
-  int timeout = 60*3000 ;
+  int timeout = 60 * 3000;
 
   public Document getTargetHtml(String targetUrl, Map paramMap) throws BusiException {
-    
-    Document doc = null ;
+
+    Document doc = null;
     try {
-      doc = Jsoup.connect(targetUrl).data(paramMap).timeout(timeout).get();
+      doc = Jsoup.connect(targetUrl).data(paramMap).userAgent("Mozilla")// 设置urer-agent
+          .cookie("auth", "token")// 设置cookie
+          .timeout(timeout)// 设置连接超时
+          .post();// 或者改为get;
     } catch (Exception e) {
-      _log.error(e.getMessage(),e);
-      String error = String.format("parse targeturl:%s ,params:%s exception:%s", 
-        targetUrl,paramMap,e.getMessage());
+      _log.error(e.getMessage(), e);
+      String error =
+          String.format("parse targeturl:%s ,params:%s exception:%s", targetUrl, paramMap,
+              e.getMessage());
       throw new BusiException("0100", error);
-    } 
+    }
     return doc;
   }
 
@@ -39,7 +42,6 @@ public class BaseParser  {
     this.timeout = timeout;
   }
 
-  
 
 
 }
