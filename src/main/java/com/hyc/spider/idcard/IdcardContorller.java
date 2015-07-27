@@ -1,6 +1,5 @@
 package com.hyc.spider.idcard;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,8 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hyc.spider.inf.ParserInf;
 import com.hyc.spider.model.Idcard;
-import com.hyc.spider.model.P2pblack;
-import com.hyc.spider.model.UrlPage;
 import com.hyc.spider.util.ConstParam;
 
 
