@@ -1,7 +1,5 @@
 //package org.directwebremoting.util;
 package com.hyc.spider.util;
-//get by zliu from http://svn.directwebremoting.org/dwr/trunk/core/api/main/java/org/directwebremoting/util/JavascriptUtil.java
-
 /*
  * Copyright 2005 Joe Walker
  *
