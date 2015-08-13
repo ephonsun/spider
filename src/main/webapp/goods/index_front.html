@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript">
+	function subform() {
+		document.form1.submit();
+	}
+</script>
+
+<title>goods查询</title>
+</head>
+<body>
+	<form action="/goods/query.do" method="post" name="form1"
+		target="mainFrame" id="form1">
+		&nbsp;&nbsp; 
+		商品地址<input id="product_url" name="product_url" type="text" value="" size="20" /> <br />
+		 &nbsp;&nbsp; 
+		商家编码<input id="sellercode" name="sellercode" type="text" value="" size="20" /> <br />
+		 &nbsp;&nbsp; 
+  
+		<input type="button" onclick="subform()" value="提交" /> <input
+			type="reset" name="Reset" value="重置" /> <br />
+		<iframe src="about:blank" width="100%" height="700" name="mainFrame"
+			id="mainFrame" title="mainFrame"></iframe>
+	</form>
+</body>
+</html>
+
+
