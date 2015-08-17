@@ -23,14 +23,14 @@ import com.hyc.spider.goods.obj.Seller;
 import com.hyc.spider.inf.ParserGoodsInf;
 
 
-@Component("jdParser")
-public class JdParser extends BaseParser implements ParserGoodsInf {
-  private static final Logger _log = LoggerFactory.getLogger(JdParser.class);
+@Component("zParser")
+public class ZParser extends BaseParser implements ParserGoodsInf {
+  private static final Logger _log = LoggerFactory.getLogger(ZParser.class);
   protected String XMTAG = "[xm99]";
-  Pattern pattern = Pattern.compile("http\\://item\\.jd\\.com/([0-9]+).html.*?");
+  Pattern pattern = Pattern.compile("(?:^http://www.amazon.cn.*/dp/)([a-zA-Z0-9]+).*?");
 
-  String sellerCode ="1005" ;
-  String seller = "京东商城" ;
+  String sellerCode ="1011" ;
+  String seller = "亚马逊" ;
   @Override
   public Document getTargetHtml(String targetUrl, Map paramMap) throws BusiException {
     return super.getTargetHtml(targetUrl, paramMap);
@@ -151,7 +151,7 @@ public class JdParser extends BaseParser implements ParserGoodsInf {
       String pid = p.getSellerCode() + StringUtils.trim(skuid);
       p.setPid(pid);
     }
-
+    System.out.println("skuid=" + skuid);
     return skuid;
   }
 
@@ -199,9 +199,8 @@ public class JdParser extends BaseParser implements ParserGoodsInf {
   }
 
   private void getProductName(Document doc, Product p) {
-    Element e = doc.getElementById("name");
-    Elements elements = e.select("h1");
-    String productName = elements == null ? "" : StringUtils.trim(elements.text());
+    Element e = doc.getElementById("productTitle");
+    String productName = e == null ? "" : StringUtils.trim(e.text());
     p.setProductName(productName);
     System.out.println("productName=" + productName);
   }

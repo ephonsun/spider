@@ -32,6 +32,10 @@
 		价格：<span class="fred">${product.price }</span><br />
 		最大价格：<span class="fred">${product.maxPrice }</span><br />
 		详情：<span class="fred">${product.contents }</span><br />
+		参数：<span class="fred">${product.mparams }</span><br />
+		原图：<span class="fred">${product.orgPic }</span><br />
+		大图：<span class="fred">${product.bigPic }</span><br />
+		小图：<span class="fred">${product.smallPic }</span><br />
 	</div>
 	
 </body>

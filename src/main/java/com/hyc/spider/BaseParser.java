@@ -14,7 +14,6 @@ import com.hyc.spider.exception.BusiException;
 
 public class BaseParser {
   private static final Logger _log = LoggerFactory.getLogger(BaseParser.class);
-
   int timeout = 60 * 3000;
 
   public Document getTargetHtml(String targetUrl, Map paramMap) throws BusiException {
@@ -60,5 +59,7 @@ public class BaseParser {
   }
 
 
+  String sellercode ="" ;
+  String seller = "" ;
 
 }
