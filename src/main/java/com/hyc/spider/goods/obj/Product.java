@@ -66,6 +66,7 @@ public class Product implements Serializable, Cloneable, Comparable<Product> {
   private double disPrice = 0;
   private double d1ratio = 0;
   private double d2ratio = 0;
+  private int comments = 0;
 
   public Product() {}
 
@@ -405,6 +406,14 @@ public class Product implements Serializable, Cloneable, Comparable<Product> {
     this.finalTime = finalTime;
   }
 
+  public int getComments() {
+    return comments;
+  }
+
+  public void setComments(int comments) {
+    this.comments = comments;
+  }
+
   private void computRatio() {
     int sellerListSize = this.sellerList == null ? 0 : this.sellerList.size();
     if (sellerListSize > 1) {// 多商家列表中标注最高原价
@@ -571,23 +580,6 @@ public class Product implements Serializable, Cloneable, Comparable<Product> {
 
   public void setD2ratio(double d2ratio) {
     this.d2ratio = d2ratio;
-  }
-
-  @Override
-  public String toString() {
-    return "Product [bigPic=" + bigPic + ", brand=" + brand + ", cid=" + cid + ", classic="
-        + classic + ", classicCode=" + classicCode + ", createTime=" + createTime + ", d1ratio="
-        + d1ratio + ", d2ratio=" + d2ratio + ", dRatio=" + dRatio + ", decPrice=" + decPrice
-        + ", disPrice=" + disPrice + ", finalTime=" + finalTime + ", friendLikerCount="
-        + friendLikerCount + ", groupbuyEndTime=" + groupbuyEndTime + ", groupbuyOnTime="
-        + groupbuyOnTime + ", hasBuy=" + hasBuy + ", id=" + id + ", isSeller=" + isSeller
-        + ", keyword=" + keyword + ", maxPrice=" + maxPrice + ", minMarketPrice=" + minMarketPrice
-        + ", minPrice=" + minPrice + ", orgPic=" + orgPic + ", pid=" + pid + ", price=" + price
-        + ", productBuyerCount=" + productBuyerCount + ", productLikerCount=" + productLikerCount
-        + ", productName=" + productName + ", product_url=" + product_url + ", score=" + score
-        + ", seller=" + seller + ", sellerCode=" + sellerCode + ", sellerCount=" + sellerCount
-        + ", sellerList=" + sellerList + ", shortName=" + shortName + ", smallPic=" + smallPic
-        + ", type=" + type + ", updateTime=" + updateTime + "]";
   }
 
 }

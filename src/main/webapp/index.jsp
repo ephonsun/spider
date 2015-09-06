@@ -20,6 +20,8 @@
 		<hr>
 		<a href="/p2pblack/index_front.html">网贷信用黑名单查询http://www.p2pblack.com/</a>
 		<hr>
+		<a href="/goods/plist_front.html">商品列表解析</a>
+		<hr>
 		<a href="/goods/index_front.html">商品详情解析</a>
 	</body>
 	

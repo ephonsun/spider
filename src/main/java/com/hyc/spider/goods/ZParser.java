@@ -10,10 +10,12 @@ import java.util.regex.Pattern;
 import org.apache.commons.lang.StringUtils;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.w3c.dom.NodeList;
 
 import com.alibaba.fastjson.JSONObject;
 import com.hyc.spider.BaseParser;
@@ -34,7 +36,6 @@ public class ZParser extends BaseParser implements ParserGoodsInf {
   @Override
   public Document getTargetHtml(String targetUrl, Map paramMap) throws BusiException {
     return super.getTargetHtml(targetUrl, paramMap);
-
   }
 
   @Override
@@ -70,74 +71,76 @@ public class ZParser extends BaseParser implements ParserGoodsInf {
     p.setSellerList(sellerList );
   }
   public void getPic(Document doc,Product p) throws BusiException {
-    Element e = doc.getElementById("spec-n1");
+    Element e = doc.getElementById("imgTagWrapperId");
     Elements es = e.select("img");
+    System.out.println(e);
     int eslen = es.size();
     String pic = "" ;
     if(eslen>0){
-      pic = es.get(0).attr("src");
+      pic = es.attr("src");
     }
     p.setBigPic(pic);
     p.setSmallPic(pic);
     p.setOrgPic(pic);
   }
-  public void getMparams(Document doc,Product p) throws BusiException {
-    StringBuilder sb = new StringBuilder();
-    Element e1 = doc.getElementById("product-detail-2");
-    Elements es = e1.select("table.Ptable>tbody>tr");
-    int eslen = es.size();
-    for(int i=0;i<eslen;i++){
-      Element e = es.get(i) ;
-      Elements etd = e.select("tr>td");
-      Elements eth = e.select("tr>th");
-      int etdlen = etd.size();
-      int ethlen = eth.size();
-      if (etdlen<=0 && ethlen <=0){
-        continue ;
-      }
-      if(etdlen<1){
-        sb.append(e.text()).append(XMTAG).append(XMTAG);
-      }else{
-        for(int j=0;j<etdlen;j++){
-          Element etdn = etd.get(j);
-          sb.append(etdn.text()).append(XMTAG);
+  public void getContents(Document doc,Product p) throws BusiException {
+    StringBuilder sb = new StringBuilder("    ");
+    Element ep = doc.getElementById("productDescription");
+    Elements div = ep.select("div.aplus");
+    Elements et  = ep.select("p");
+    if(div !=null){
+      Element d = div.get(0);
+      sb.append(d.text());
+    }else if(et!=null){
+      
+    }else{
+      
+    }
+    p.setContents(sb.toString());
+  }
+  
+  private static List<String> getNodeList(List<Node> childNodeList){
+    List<String> nodeList = new ArrayList<String>();
+    String str = "";
+    for (int j = 0; j < childNodeList.size(); j++) {
+        Node node = childNodeList.get(j);
+        if (node != null && !node.nodeName().toLowerCase().equals("script")
+                && !node.nodeName().toLowerCase().equals("style") 
+              ) {     
+            str = node.toString().replaceAll("[　\\s]+"," ");
+            str = str.replaceAll("：", ":");
+            if (StringUtils.isNotEmpty(str)) {
+                nodeList.add(str);
+            }
+        } else {
+            continue;
         }
+    }
+    return nodeList;
+}
+  public void getMparams(Document doc,Product p) throws BusiException {
+    StringBuilder sb = new StringBuilder("");
+    Elements es = doc.getElementById("productDetailsTable").select("tbody>tr>td");
+    Elements h2 = es.select("h2");
+    String h2txt = h2==null ? "" : StringUtils.trimToEmpty(h2.text());
+    if(StringUtils.isNotEmpty(h2txt)){
+      sb.append(h2txt).append(XMTAG).append(XMTAG);
+    }
+    Elements div1 = es.select("div.disclaim");
+    Elements div2 = es.select("div.content>ul>li");
+    int div2len = div2==null?0: div2.size();
+    for(int i=0;i<div2len ; i++){
+      Element c = div2.get(i);
+      String ctxt = c==null ? "" : StringUtils.trimToEmpty(c.text());
+      if(ctxt.contains("用户评分:"))break;
+      if(StringUtils.isNotEmpty(ctxt)){
+        sb.append(ctxt).append(XMTAG);
       }
       
     }
-    p.setMparams(sb.toString());
-  }
-  public void getContents(Document doc,Product p) throws BusiException {
-    StringBuilder sb = new StringBuilder("    ");
-    Element pe1 = doc.getElementById("parameter1");
-    if(null!=pe1){
-      Elements pes1 = pe1.select("div.detail>p");
-      int pes1len = pes1.size();
-      System.out.println("pes1len="+ pes1len);
-      for(int i=0;i<pes1len;i++){
-        Element e = pes1.get(i);
-        String text = StringUtils.trim(e.text());
-        if(text.length()>0){
-          sb.append(text).append(XMTAG);
-        }
-      }
-    }
-   
-    Element pe2 = doc.getElementById("parameter2") ;
-    if(null!=pe2){
-      Elements pes2 = pe2.select("li");
-      int pes2len = pes2.size();
-      for(int i=0;i<pes2len;i++){
-        Element e = pes2.get(i);
-        String text = StringUtils.trim(e.text());
-        if(text.length()>0){
-          sb.append(text).append(XMTAG);
-        }
-      }
-    }
     
-    String contents = sb.toString();
-    p.setContents(contents);
+    System.out.println("mparams:" + sb.toString());
+    p.setMparams(sb.toString());
   }
 
   
@@ -156,35 +159,27 @@ public class ZParser extends BaseParser implements ParserGoodsInf {
   }
 
   private void getPrice(Document doc, Product p, String skuid) {
-    String priceUrl =
-        "http://p.3.cn/prices/get?skuid=J_" + skuid + "&type=1&callback=changeImgPrice2Num";
-    String priceJson = null;
-    String resString = null;
-    try {
-      resString = getTargetHtmlByJson(priceUrl, new HashMap<String, String>());
-    } catch (BusiException e) {
-      _log.error(e.getMessage(), e);
-    }
-
-    if (StringUtils.isNotEmpty(resString)) {
-      resString = resString.replaceAll("[\\s]{2,}", " ");
-      int beginIndex = resString.indexOf("[") + 1;
-      int endIndex = resString.indexOf("]");
-      if (beginIndex >= 0 && endIndex >= 0) {
-        resString = resString.substring(beginIndex, endIndex);// 得到json字符串
-      }
-    }
-    priceJson = resString ;
-    System.out.println(resString);
-    String price = "";
+    Element e = doc.getElementById("price");
+    Elements es = e.select("tbody>tr");
     String maxprice = "";
-    if (StringUtils.isNotEmpty(priceJson)) {
-      JSONObject o = JSONObject.parseObject(priceJson);
-      price = o.getString("p");
-      maxprice = o.getString("m");
+    
+    int eslen = es == null ? 0:es.size();
+    if(eslen>1){
+        Element t0 = es.get(0);
+        Elements tt0 = t0.select("td.a-span12");
+        maxprice = StringUtils.trimToEmpty(tt0.text());
+        maxprice = maxprice.replaceAll("[,，]", "");
+        maxprice = maxprice.replace("￥", "") ;
+    }else{
+        
     }
+    
+    Element r1 = doc.getElementById("priceblock_saleprice");
+    Element r2 = doc.getElementById("priceblock_ourprice");
+    Element r = r1!=null? r1 : r2 ;
+    String price = StringUtils.trimToEmpty(r.text());
     price = price.replaceAll("[,，]", "");
-    maxprice = maxprice.replaceAll("[,，]", "");
+    price = price.replace("￥", "") ;
     double max, min = 0;
     max = min = StringUtils.isEmpty(price) ? 0 : Double.parseDouble(price);
     max = StringUtils.isEmpty(maxprice) ? max : Double.parseDouble(maxprice);
