@@ -1,10 +1,16 @@
 package com.hyc.spider.goods;
 
 import java.net.URLDecoder;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,10 +25,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.hyc.spider.db.ProductsDao;
+import com.hyc.spider.goods.obj.FetchObj;
 import com.hyc.spider.goods.obj.Product;
 import com.hyc.spider.inf.ParserGoodsInf;
 import com.hyc.spider.util.ConstParam;
+import com.hyc.spider.util.XmlParser;
+import com.hyc.spider.woker.Consumer;
 
 
 
@@ -35,6 +43,10 @@ public class GoodsContorller {
   ParserGoodsInf jdParser;
 
   @Autowired
+  @Qualifier("dataImpl")
+  DataImpl dataImpl;
+
+  @Autowired
   @Qualifier("zParser")
   ParserGoodsInf zParser;
 
@@ -42,15 +54,11 @@ public class GoodsContorller {
   @Qualifier("jdListParser")
   ParserGoodsInf jdListParser;
 
-  String JD_SELLER = "1005";
-  String Z_SELLER = "1011";
-
-
   @RequestMapping(value = "/goods/query")
   public String getProduct(HttpServletRequest request, HttpServletResponse response,
       ModelMap model, String product_url, String sellercode, String format, Integer range,
       String classiccode, String maincat, String secondcat) throws Exception {
-    String purl = StringUtils.trimToEmpty(product_url);
+    product_url = StringUtils.trimToEmpty(product_url);
     if (StringUtils.isEmpty(format)) format = ConstParam.FORMAT_XML;
     model.addAttribute("format", format);
     model.addAttribute("product_url", product_url);
@@ -64,51 +72,18 @@ public class GoodsContorller {
     model.addAttribute("maincat", maincat);
     model.addAttribute("secondcat", secondcat);
 
-    Map<String, String> paramMap = new HashMap<String, String>();
-
     Product resp = null;
-    if (StringUtils.isEmpty(purl)) {
+    if (StringUtils.isEmpty(product_url)) {
       _log.warn("input product_url is empty,try again!");
     } else {
-      Document doc = jdParser.getTargetHtml(product_url, paramMap);
-      if (doc != null) {
-        Product p = new Product();
-        p.setClassicCode(classiccode);
-        p.setSellerCode(JD_SELLER);
-        p.setProduct_url(product_url);
-        jdParser.parserGoods(doc, p);
-        
-        ProductsDao.save(p);
-        String pid = p.getPid();
-        String position = pid;
-        double dratio = p.getD1ratio();
-        double dcratio = p.getD2ratio();
-        long finalTime = p.getFinalTime();
-        int totalComment = p.getComments();
-        Date createTime = p.getCreateTime();
-        Date updateTime = p.getUpdateTime();
-
-        switch (range) {
-          case 1: // 首页 -- bjdg_wantbuy----
-            String aCatCode = maincat + "#000";
-
-            ProductsDao.savewantbuy(aCatCode, pid, totalComment);
-            break;
-          case 2: // 享优惠 -- bjdg_onsale ---
-            aCatCode = maincat + "#000";
-
-            ProductsDao.saveonsale(aCatCode, pid, finalTime, dratio, dcratio);
-            break;
-          case 3:// 发现 -- bjdg_shuffle---
-            aCatCode = maincat + "#" + secondcat;
-            ProductsDao.savefind(aCatCode, pid, pid, dratio, dcratio, finalTime);
-            break;
-          default:
-            _log.warn("input range is not avaliable!");
-            break;
-        }
-        resp = p;
-      }
+      FetchObj f = new FetchObj();
+      f.setMaincat(maincat);
+      f.setSecondcat(secondcat);
+      f.setClassiccode(classiccode);
+      f.setSellercode(sellercode);
+      f.setUrl(product_url);
+      f.setRange(range);
+      resp = dataImpl.datum(f,product_url);
     }
 
     model.addAttribute("product", resp);
@@ -146,6 +121,56 @@ public class GoodsContorller {
     model.addAttribute("plist", plist);
 
     return "/goods/plist_show";
+  }
+
+  // 批量抓取列表数据
+  @RequestMapping(value = "/goods/batch")
+  public String getBatch(HttpServletRequest request, HttpServletResponse response, ModelMap model,
+      String batchfile) throws Exception {
+    // read xml file
+    if (StringUtils.isEmpty(batchfile))
+      batchfile = this.getClass().getClassLoader().getResource("template.xml").getPath();
+    
+    List<FetchObj> flist = XmlParser.parseXml(batchfile);
+    int flistSize = flist == null ? 0 : flist.size();
+    if (flistSize > 0) {
+      Map<String, String> paramMap = new HashMap<String, String>();
+
+      List<FetchObj> folist = new ArrayList<FetchObj>();
+      BlockingQueue<FetchObj> bq = new ArrayBlockingQueue<FetchObj>(100);
+      for (FetchObj fetchObj : flist) {
+        String url = fetchObj.getUrl();
+        if (StringUtils.isEmpty(url)) continue;
+        Document doc = jdListParser.getTargetHtml(url, paramMap);
+        List<String> urls = null;
+        if (doc != null) {
+          urls = jdListParser.parserPage(doc);
+        }
+
+        int urlsSize = urls == null ? 0 : urls.size();
+        if (0 < urlsSize) {
+          fetchObj.setExtUrls(urls);
+          bq.add(fetchObj);
+        }else{
+          System.err.println(url);
+        }
+
+      }
+      Consumer con = new Consumer(bq,dataImpl);
+      Thread t = new Thread(con);
+      t.start();
+      
+      dataImpl.subTimectl();
+      
+      System.out.println("do flist ok");
+      model.addAttribute("flist", flist);
+
+    } else {
+      _log.info("no fetch objects!");
+    }
+
+
+    return "/goods/flist_show";
   }
 
 

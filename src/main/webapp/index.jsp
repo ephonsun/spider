@@ -23,6 +23,8 @@
 		<a href="/goods/plist_front.html">商品列表解析</a>
 		<hr>
 		<a href="/goods/index_front.html">商品详情解析</a>
+		<hr>
+		<a href="/goods/flist_front.html">商品自动爬取</a>
 	</body>
 	
 </html>

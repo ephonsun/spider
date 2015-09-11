@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	
+<!-- 首页 start 分类包括 10=D07手机数码 12=D08美容化妆 11=D09家用电器 15=D02服饰鞋帽  -->
+	<item>
+		<maincat>D07</maincat>
+		<secondcat>000</secondcat>
+		<classiccode>10</classiccode><!-- 手机数码 -->
+		<sellercode>1005</sellercode>
+		<!-- 1 首页   bjdg_wantbuy -->
+		<!-- 2 享优惠  bjdg_onsale   -->
+		<!-- 3 发现  bjdg_shuffle  -->
+		<range>1</range>
+		<isUse>0</isUse> <!-- 0不处理，1处理 -->
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E6%89%8B%E6%9C%BA&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&cid2=653&cid3=655&wtype=1&stock=1&click=2#keyword=%E6%89%8B%E6%9C%BA&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&cid2=653&cid3=655&stock=1&click=3
+		]]></url>
+	</item>
+	<item><!-- 首页  -->
+		<maincat>D08</maincat>
+		<secondcat>000</secondcat>
+		<classiccode>12</classiccode><!-- 美容化妆  -->
+		<sellercode>1005</sellercode>
+		<!-- 1 首页  bjdg_wantbuy -->
+		<!-- 2 享优惠  bjdg_onsale -->
+		<!-- 3 发现  bjdg_shuffle -->
+		<range>1</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E7%BE%8E%E5%AE%B9%E5%8C%96%E5%A6%86&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&wtype=1&stock=1&click=4#keyword=%E7%BE%8E%E5%AE%B9%E5%8C%96%E5%A6%86&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&click=5
+		]]></url>
+	</item>
+	<item><!-- 首页 -->
+		<maincat>D09</maincat>
+		<secondcat>000</secondcat>
+		<classiccode>11</classiccode><!-- 家用电器 -->
+		<sellercode>1005</sellercode>
+		<!-- 1 首页  bjdg_wantbuy -->
+		<!-- 2 享优惠  bjdg_onsale -->
+		<!-- 3 发现  bjdg_shuffle -->
+		<range>1</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%AE%B6%E7%94%A8%E7%94%B5%E5%99%A8&enc=utf-8&stock=1
+		]]></url>
+	</item>
+	<item><!-- 首页 -->
+		<maincat>D02</maincat>
+		<secondcat>000</secondcat>
+		<classiccode>15</classiccode><!-- 服饰鞋帽  -->
+		<sellercode>1005</sellercode>
+		<!-- 1 首页  bjdg_wantbuy -->
+		<!-- 2 享优惠  bjdg_onsale -->
+		<!-- 3 发现  bjdg_shuffle -->
+		<range>1</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E6%9C%8D%E9%A5%B0&enc=utf-8&wq=%E6%9C%8D%E9%A5%B0&pvid=6l0oicei.yjwnby#keyword=%E6%9C%8D%E9%A5%B0&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&psort=3&click=3
+		]]></url>
+	</item>
+<!-- 首页 end -->
+<!-- 享优惠 start 分类包括 10=D07手机数码 12=D08美容化妆 11=D09家用电器 15=D02服饰鞋帽 -->
+	<item>
+		<maincat>D07</maincat>
+		<secondcat>000</secondcat>
+		<classiccode>10</classiccode><!-- 手机数码 -->
+		<sellercode>1005</sellercode>
+		<!-- 1 首页  bjdg_wantbuy -->
+		<!-- 2 享优惠  bjdg_onsale -->
+		<!-- 3 发现  bjdg_shuffle -->
+		<range>2</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E6%89%8B%E6%9C%BA%E6%95%B0%E7%A0%81&enc=utf-8&wq=%E6%89%8B%E6%9C%BA%E6%95%B0%E7%A0%81&pvid=wx3mvdei.yjwnby#keyword=%E6%89%8B%E6%9C%BA%E6%95%B0%E7%A0%81&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&psort=5&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D08</maincat>
+		<secondcat>000</secondcat>
+		<classiccode>12</classiccode><!-- 美容化妆 -->
+		<sellercode>1005</sellercode>
+		<!-- 1 首页  bjdg_wantbuy -->
+		<!-- 2 享优惠  bjdg_onsale -->
+		<!-- 3 发现  bjdg_shuffle -->
+		<range>2</range>
+		<url><![CDATA[
+http://search.jd.com/Search?keyword=%E7%BE%8E%E5%AE%B9%E5%8C%96%E5%A6%86&enc=utf-8&wq=%E7%BE%8E%E5%AE%B9%E5%8C%96%E5%A6%86&pvid=rkxnvdei.yjwnby#keyword=%E7%BE%8E%E5%AE%B9%E5%8C%96%E5%A6%86&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D09</maincat>
+		<secondcat>000</secondcat>
+		<classiccode>11</classiccode><!-- 家用电器 -->
+		<sellercode>1005</sellercode>
+		<!-- 1 首页  bjdg_wantbuy -->
+		<!-- 2 享优惠  bjdg_onsale -->
+		<!-- 3 发现  bjdg_shuffle -->
+		<range>2</range>
+		<url><![CDATA[
+http://search.jd.com/Search?keyword=%E5%AE%B6%E7%94%A8%E7%94%B5%E5%99%A8&enc=utf-8&wq=%E5%AE%B6%E7%94%A8%E7%94%B5%E5%99%A8&pvid=430ovdei.yjwnby#keyword=%E5%AE%B6%E7%94%A8%E7%94%B5%E5%99%A8&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D02</maincat>
+		<secondcat>000</secondcat>
+		<classiccode>15</classiccode><!-- 服饰鞋帽  -->
+		<sellercode>1005</sellercode>
+		<!-- 1 首页  bjdg_wantbuy -->
+		<!-- 2 享优惠  bjdg_onsale -->
+		<!-- 3 发现  bjdg_shuffle -->
+		<range>1</range>
+		<url><![CDATA[
+http://search.jd.com/Search?keyword=%E6%9C%8D%E9%A5%B0&enc=utf-8&stock=1
+	]]></url>
+	</item>
+<!-- 首页 end -->
+
+<!-- 发现 start 有10个分类，每个分类有3个小类 001 002 003 -->
+	<!-- 
+D01	001	婴童	童装						19	母婴用品
+D01	002	婴童	童鞋						19	母婴用品
+D01	003	婴童	婴儿						19	母婴用品
+D02	001	女装	上衣						15	服饰鞋帽
+D02	002	女装	外套						15	服饰鞋帽
+D02	003	女装	下装						15	服饰鞋帽
+D03	001	鞋靴	女鞋						15	服饰鞋帽
+D03	002	鞋靴	男鞋						15	服饰鞋帽
+D03	003	鞋靴	靴子						15	服饰鞋帽
+D04	001	创意商品	创意饰品				16	饰物箱包
+D04	002	创意商品	创意家居				16	饰物箱包
+D04	003	创意商品	创意礼品				16	饰物箱包
+D05	001	配饰	围巾						15	服饰鞋帽
+D05	002	配饰	帽子						15	服饰鞋帽
+D05	003	配饰	内衣						15	服饰鞋帽
+D06	001	女包	钱包手拿					16	饰物箱包
+D06	002	女包	斜挎手提					16	饰物箱包
+D06	003	女包	双肩包					16	饰物箱包
+D07	001	手机数码	手机					10	手机数码
+D07	002	手机数码	摄像/相机				10	手机数码
+D07	003	手机数码	其他					10	手机数码
+D08	001	美容化妆	面部护理				12	美容化妆
+D08	002	美容化妆	香水					12	美容化妆
+D08	003	美容化妆	魅力彩妆				12	美容化妆
+D09	001	家用电器	大家电				11	家用电器 
+D09	002	家用电器	生活电器				11	家用电器 
+D09	003	家用电器	厨卫电器				11	家用电器 
+D10	001	家居生活	床上用品				17	厨卫家居
+D10	002	家居生活	水杯					17	厨卫家居
+D10	003	家居生活	厨具					17	厨卫家居
+ -->
+ <!-- D01	001	婴童	童装						19	母婴用品
+D01	002	婴童	童鞋						19	母婴用品
+D01	003	婴童	婴儿						19	母婴用品  -->
+	<item>
+		<maincat>D01</maincat>
+		<secondcat>001</secondcat><!-- 童装  -->
+		<classiccode>19</classiccode>
+		<sellercode>1005</sellercode>
+		<!-- 1 首页  bjdg_wantbuy -->
+		<!-- 2 享优惠  bjdg_onsale -->
+		<!-- 3 发现  bjdg_shuffle -->
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E7%AB%A5%E8%A3%85&enc=utf-8&wq=%E7%AB%A5%E8%A3%85&pvid=6hjpvdei.yjwnby#keyword=%E7%AB%A5%E8%A3%85&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D01</maincat>
+		<secondcat>002</secondcat><!-- 童鞋  -->
+		<classiccode>19</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E7%AB%A5%E9%9E%8B&enc=utf-8&wq=%E7%AB%A5%E9%9E%8B&pvid=4dcwvdei.yjwnby#keyword=%E7%AB%A5%E9%9E%8B&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D01</maincat>
+		<secondcat>003</secondcat><!-- 婴儿  -->
+		<classiccode>19</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%A9%B4%E5%84%BF&enc=utf-8&wq=%E5%A9%B4%E5%84%BF&pvid=qjowvdei.yjwnby#keyword=%E5%A9%B4%E5%84%BF&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&click=1
+		]]></url>
+	</item>
+	<!-- D02	001	女装	上衣						15	服饰鞋帽
+D02	002	女装	外套						15	服饰鞋帽
+D02	003	女装	下装						15	服饰鞋帽  -->
+	<item>
+		<maincat>D02</maincat>
+		<secondcat>001</secondcat><!-- 上衣 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%A5%B3%E8%A3%85%09%E4%B8%8A%E8%A1%A3&enc=utf-8&wq=%E5%A5%B3%E8%A3%85%09%E4%B8%8A%E8%A1%A3&pvid=drzwvdei.yjwnby#keyword=%E5%A5%B3%E8%A3%85%09%E4%B8%8A%E8%A1%A3&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D02</maincat>
+		<secondcat>002</secondcat><!-- 外套  -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%A5%B3%E8%A3%85%09%E5%A4%96%E5%A5%97&enc=utf-8&wq=%E5%A5%B3%E8%A3%85%09%E5%A4%96%E5%A5%97&pvid=23mxvdei.yjwnby#keyword=%E5%A5%B3%E8%A3%85%09%E5%A4%96%E5%A5%97&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D02</maincat>
+		<secondcat>003</secondcat><!-- 下装  -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%A5%B3%E8%A3%85%09%E4%B8%8B%E8%A3%85&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&click=1#keyword=%E5%A5%B3%E8%A3%85%09%E4%B8%8B%E8%A3%85&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&click=3
+		]]></url>
+	</item>
+	<!-- D03	001	鞋靴	女鞋						15	服饰鞋帽
+D03	002	鞋靴	男鞋						15	服饰鞋帽
+D03	003	鞋靴	靴子						15	服饰鞋帽  -->
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>001</secondcat><!-- 女鞋  -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%A5%B3%E9%9E%8B&enc=utf-8&pvid=twzswdei.yjwnby#keyword=%E5%A5%B3%E9%9E%8B&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&psort=5&cid2=11731&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>002</secondcat><!-- 男鞋	-->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E7%94%B7%E9%9E%8B&enc=utf-8&wq=%E7%94%B7%E9%9E%8B&pvid=tgetwdei.yjwnby#keyword=%E7%94%B7%E9%9E%8B&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&psort=5&cid2=11730&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>003</secondcat><!-- 靴子  -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E9%9D%B4%E5%AD%90%E5%A5%B3&enc=utf-8#keyword=%E9%9D%B4%E5%AD%90%E5%A5%B3&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&click=1
+		]]></url>
+	</item>
+	<!-- D04	001	创意商品	创意饰品				16	饰物箱包
+D04	002	创意商品	创意家居				16	饰物箱包
+D04	003	创意商品	创意礼品				16	饰物箱包  -->
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>001</secondcat><!-- 创意饰品  -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%88%9B%E6%84%8F%E9%A5%B0%E5%93%81&enc=utf-8&wq=%E5%88%9B%E6%84%8F%E9%A5%B0%E5%93%81&pvid=dfuuwdei.yjwnby#keyword=%E5%88%9B%E6%84%8F%E9%A5%B0%E5%93%81&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>002</secondcat><!-- 创意家居  -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%88%9B%E6%84%8F%E5%AE%B6%E5%B1%85&enc=utf-8&wq=%E5%88%9B%E6%84%8F%E5%AE%B6%E5%B1%85&pvid=di8vwdei.yjwnby#keyword=%E5%88%9B%E6%84%8F%E5%AE%B6%E5%B1%85&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>003</secondcat><!-- 创意礼品	 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%88%9B%E6%84%8F%E7%A4%BC%E5%93%81&enc=utf-8&wq=%E5%88%9B%E6%84%8F%E7%A4%BC%E5%93%81&pvid=k2ovwdei.yjwnby#keyword=%E5%88%9B%E6%84%8F%E7%A4%BC%E5%93%81&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&click=1
+		]]></url>
+	</item>
+	<!-- D05	001	配饰	围巾						15	服饰鞋帽
+D05	002	配饰	帽子						15	服饰鞋帽
+D05	003	配饰	内衣						15	服饰鞋帽  -->
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>001</secondcat><!-- 围巾  -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%9B%B4%E5%B7%BE&enc=utf-8&wq=%E5%88%9B%E6%84%8F%E7%A4%BC%E5%93%81&pvid=kspgxdei.yjwnby#keyword=%E5%9B%B4%E5%B7%BE&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&click=3
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>002</secondcat><!-- 帽子	 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%B8%BD%E5%AD%90&enc=utf-8&wq=%E5%B8%BD%E5%AD%90&pvid=e26hxdei.yjwnby#keyword=%E5%B8%BD%E5%AD%90&enc=utf-8&prom_type=0&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&click=2
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>003</secondcat><!-- 内衣	 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+http://search.jd.com/Search?keyword=%E5%86%85%E8%A1%A3%20%E5%A5%B3&enc=utf-8&suggest=1.his.0&wq=%E5%86%85%E8%A1%A3&pvid=ofhixdei.yjwnby#keyword=%E5%86%85%E8%A1%A3%20%E5%A5%B3&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&click=1
+		]]></url>
+	</item>
+	<!-- D06	001	女包	钱包手拿				16	饰物箱包
+D06	002	女包	斜挎手提				16	饰物箱包
+D06	003	女包	双肩包					16	饰物箱包  -->
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>001</secondcat><!-- 钱包手拿	 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E9%92%B1%E5%8C%85%E6%89%8B%E6%8B%BF%20%E5%A5%B3&enc=utf-8&wq=%E9%92%B1%E5%8C%85%E6%89%8B%E6%8B%BF%20%E5%A5%B3&pvid=5bjjxdei.yjwnby#keyword=%E9%92%B1%E5%8C%85%E6%89%8B%E6%8B%BF%20%E5%A5%B3&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>002</secondcat><!-- 斜挎手提	 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E6%96%9C%E6%8C%8E%E6%89%8B%E6%8F%90%20%20%E5%A5%B3&enc=utf-8&wq=%E6%96%9C%E6%8C%8E%E6%89%8B%E6%8F%90%20%20%E5%A5%B3&pvid=fiwjxdei.yjwnby#keyword=%E6%96%9C%E6%8C%8E%E6%89%8B%E6%8F%90%20%20%E5%A5%B3&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>003</secondcat><!-- 双肩包	 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%8F%8C%E8%82%A9%E5%8C%85%20%20%E5%A5%B3&enc=utf-8&wq=%E5%8F%8C%E8%82%A9%E5%8C%85%20%20%E5%A5%B3&pvid=z5akxdei.yjwnby#keyword=%E5%8F%8C%E8%82%A9%E5%8C%85%20%20%E5%A5%B3&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&click=1
+		]]></url>
+	</item>
+	<!-- D07	001	手机数码	手机				10	手机数码
+D07	002	手机数码	摄像/相机		10	手机数码
+D07	003	手机数码	其他				10	手机数码  -->
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>001</secondcat><!-- 手机  -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E6%89%8B%E6%9C%BA&enc=utf-8&wq=%E6%89%8B%E6%9C%BA&pvid=cdpkxdei.yjwnby#keyword=%E6%89%8B%E6%9C%BA&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&cid2=653&cid3=655&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>002</secondcat><!-- 摄像/相机 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E6%91%84%E5%83%8F%2F%E7%9B%B8%E6%9C%BA&enc=utf-8&wq=%E6%91%84%E5%83%8F%2F%E7%9B%B8%E6%9C%BA&pvid=122lxdei.yjwnby#keyword=%E6%91%84%E5%83%8F%2F%E7%9B%B8%E6%9C%BA&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>003</secondcat><!-- 其他	-->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E6%89%8B%E6%9C%BA%E9%85%8D%E4%BB%B6&enc=utf-8&wq=%E6%89%8B%E6%9C%BA%E9%85%8D%E4%BB%B6&pvid=foonydei.yjwnby#keyword=%E6%89%8B%E6%9C%BA%E9%85%8D%E4%BB%B6&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&click=1
+		]]></url>
+	</item>
+	<!-- D08	001	美容化妆	面部护理		12	美容化妆
+D08	002	美容化妆	香水				12	美容化妆
+D08	003	美容化妆	魅力彩妆		12	美容化妆  -->
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>001</secondcat><!-- 面部护理 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E9%9D%A2%E9%83%A8%E6%8A%A4%E7%90%86&enc=utf-8&wq=%E9%9D%A2%E9%83%A8%E6%8A%A4%E7%90%86&pvid=pftnydei.yjwnby#keyword=%E9%9D%A2%E9%83%A8%E6%8A%A4%E7%90%86&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&psort=5&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>002</secondcat><!-- 香水 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E9%A6%99%E6%B0%B4%E5%A5%B3%E5%A3%AB&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>003</secondcat><!-- 魅力彩妆 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E9%AD%85%E5%8A%9B%E5%BD%A9%E5%A6%86%20%E5%A5%B3%E5%A3%AB&enc=utf-8&wq=%E9%AD%85%E5%8A%9B%E5%BD%A9%E5%A6%86%20%E5%A5%B3%E5%A3%AB&pvid=sgeqydei.yjwnby#keyword=%E9%AD%85%E5%8A%9B%E5%BD%A9%E5%A6%86%20%E5%A5%B3%E5%A3%AB&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&click=1
+		]]></url>
+	</item>
+	<!-- D09	001	家用电器	大家电			11	家用电器 
+D09	002	家用电器	生活电器		11	家用电器 
+D09	003	家用电器	厨卫电器		11	家用电器  -->
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>001</secondcat><!-- 大家电 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%A4%A7%E5%AE%B6%E7%94%B5&enc=utf-8&wq=%E5%A4%A7%E5%AE%B6%E7%94%B5&pvid=wcrqydei.yjwnby#keyword=%E5%A4%A7%E5%AE%B6%E7%94%B5&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>002</secondcat><!-- 生活电器 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E7%94%9F%E6%B4%BB%E7%94%B5%E5%99%A8&enc=utf-8&wq=%E7%94%9F%E6%B4%BB%E7%94%B5%E5%99%A8&pvid=bn4rydei.yjwnby#keyword=%E7%94%9F%E6%B4%BB%E7%94%B5%E5%99%A8&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>003</secondcat><!-- 厨卫电器 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%8E%A8%E5%8D%AB%E7%94%B5%E5%99%A8&enc=utf-8&suggest=1.rem.1&wq=%E5%8E%A8%E5%8D%AB%E7%94%B5%E5%99%A8&pvid=5btrydei.yjwnby#keyword=%E5%8E%A8%E5%8D%AB%E7%94%B5%E5%99%A8&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&click=1
+		]]></url>
+	</item>
+	<!-- D10	001	家居生活	床上用品		17	厨卫家居
+D10	002	家居生活	水杯				17	厨卫家居
+D10	003	家居生活	厨具				17	厨卫家居  -->
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>001</secondcat><!-- 床上用品 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%BA%8A%E4%B8%8A%E7%94%A8%E5%93%81&enc=utf-8&wq=%E5%BA%8A%E4%B8%8A%E7%94%A8%E5%93%81&pvid=9kvrydei.yjwnby#keyword=%E5%BA%8A%E4%B8%8A%E7%94%A8%E5%93%81&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&psort=5&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>002</secondcat><!-- 水杯 -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E6%B0%B4%E6%9D%AF&enc=utf-8&wq=%E6%B0%B4%E6%9D%AF&pvid=6f8sydei.yjwnby#keyword=%E6%B0%B4%E6%9D%AF&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&stock=1&click=1
+		]]></url>
+	</item>
+	<item>
+		<maincat>D03</maincat>
+		<secondcat>003</secondcat><!-- 厨具  -->
+		<classiccode>15</classiccode>
+		<sellercode>1005</sellercode>
+		<range>3</range>
+		<url><![CDATA[
+		http://search.jd.com/Search?keyword=%E5%8E%A8%E5%85%B7&enc=utf-8&wq=%E5%8E%A8%E5%85%B7&pvid=yjssydei.yjwnby#keyword=%E5%8E%A8%E5%85%B7&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&sttr=1&stock=1&click=1
+		]]></url>
+	</item>
+<!-- 发现 end -->
+
+</items>
+

@@ -41,6 +41,7 @@ public class JdParser extends BaseParser implements ParserGoodsInf {
 
   @Override
   public void parserGoods(Document doc, Product p) throws BusiException {
+    _log.info(String.format("will parser goods for url:%s", p.getProduct_url()));
     getProductName(doc, p);
     String skuid = getSkuid(doc, p);
     getPrice(doc, p, skuid);
@@ -83,7 +84,6 @@ public class JdParser extends BaseParser implements ParserGoodsInf {
 
     comments = StringUtils.isNotEmpty(cc) ? Integer.parseInt(cc) : 0;
     p.setComments(comments);
-    System.out.println(String.format("comments=%s", comments));
 
 
   }
@@ -159,7 +159,6 @@ public class JdParser extends BaseParser implements ParserGoodsInf {
     if (null != pe1) {
       Elements pes1 = pe1.select("div.detail>p");
       int pes1len = pes1.size();
-      System.out.println("pes1len=" + pes1len);
       for (int i = 0; i < pes1len; i++) {
         Element e = pes1.get(i);
         String text = StringUtils.trim(e.text());
@@ -221,7 +220,6 @@ public class JdParser extends BaseParser implements ParserGoodsInf {
       }
     }
     priceJson = resString;
-    System.out.println(resString);
     String price = "";
     String maxprice = "";
     if (StringUtils.isNotEmpty(priceJson)) {
@@ -259,7 +257,8 @@ public class JdParser extends BaseParser implements ParserGoodsInf {
     p.setD1ratio(d1ratioByDouble);
     p.setD2ratio(d2ratioByDouble);
     System.out.println(String.format(
-        "price=%s,max=%s,min=%s,minmarket=%s,disprice=%s,d1ratio:%s,d2ratio:%s", price, max, min,
+        "pid=%s,productname=%s,price=%s,max=%s,min=%s,minmarket=%s,disprice=%s,d1ratio:%s,d2ratio:%s", 
+        p.getPid(),p.getProductName(),price, max, min,
         p.getMinMarketPrice(), p.getDisPrice(), p.getD1ratio(), p.getD2ratio()));
   }
 
@@ -268,7 +267,6 @@ public class JdParser extends BaseParser implements ParserGoodsInf {
     Elements elements = e.select("h1");
     String productName = elements == null ? "" : StringUtils.trim(elements.text());
     p.setProductName(productName);
-    System.out.println("productName=" + productName);
   }
 
   @Override

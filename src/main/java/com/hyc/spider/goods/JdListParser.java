@@ -1,5 +1,9 @@
 package com.hyc.spider.goods;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -40,7 +44,38 @@ public class JdListParser extends BaseParser implements ParserGoodsInf {
 
   @Override
   public List parserPage(Document doc) throws BusiException {
+//    File f = new File("1.txt");
+//    if (f.exists())f.delete();
+//    FileOutputStream os = null ;
+//    try {
+//      os = new FileOutputStream(f);
+//      os.write(doc.html().getBytes());
+//      os.flush();
+//    } catch (FileNotFoundException e1) {
+//      // TODO Auto-generated catch block
+//      
+//      e1.printStackTrace();
+//    } catch (IOException e1) {
+//      // TODO Auto-generated catch block
+//      
+//      e1.printStackTrace();
+//    } finally{
+//      if(null != os){
+//        try {
+//          os.close();
+//        } catch (IOException e1) {
+//          // TODO Auto-generated catch block
+//          
+//          e1.printStackTrace();
+//        }
+//      }
+//    }
+    
     Element e = doc.getElementById("plist");
+    if (e==null) {
+      return null ;
+    }
+//    System.out.println("$$" + e);
     Elements es = e.select("ul>li");
     int eslen = es == null ? 0 : es.size();
     List<String> plist = new ArrayList<String>();
@@ -53,7 +88,6 @@ public class JdListParser extends BaseParser implements ParserGoodsInf {
       }
     }
     
-    System.out.println(plist.size());
     return plist;
   }
 
